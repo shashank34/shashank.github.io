@@ -87,5 +87,5 @@ defaults:
       dsq_count: true
 
 # safe:        false
-host:        127.0.0.1
-port:        4000
+# host:        127.0.0.1
+# port:        4000
