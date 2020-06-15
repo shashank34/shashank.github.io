@@ -1,4 +1,91 @@
 theme: jekyll-theme-cayman
-name: Shashank Sharma, Backend Developer
+name: Shashank Sharma
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+# ----------------------------------
+# Site attributes
+# ----------------------------------
+title:            Shashank Sharma
+description:      "Shashank Sharma Backend - Web Developer Nodejs,Python"
+
+author:
+  name:           Shashank Sharma
+  description:    Backend Developer
+  url:            https://shashank34.github.io/
+  email:          shashanks835@gmail.com
+  twitter:        https://twitter.com/shashankupadh13
+  github:         https://github.com/shashank34
+  facebook:       https://www.facebook.com/shashanks835
+  avatar:         https://en.gravatar.com/userimage/188044257/62967d251689545aa833ffff0af23d57.jpg?size=200
+  # avatar:         http://127.0.0.1:4000/images/ad6facb479066db3b8007443ce79fcdd.jpg
+
+# ----------------------------------
+# Site settings
+# ----------------------------------
+baseurl:          ""
+blog_url:         "/blog"
+url:              "https://shashank34.github.io"
+locale:           pt-br
+disqus_enable:    true
+disqus_shortname: shashankssh
+
+#ga_tracker_id:    5189486-5 # ==> blog.adrianorosa.com
+
+encoding:         UTF-8
+timezone:         Asia/Kolkata
+
+# ----------------------------------
+# Build settings
+# ----------------------------------
+# markdown:    kramdown
+# kramdown:
+#   input: GFM
+markdown:         redcarpet
+redcarpet:
+  extensions: ["with_toc_data", "autolink"]
+
+highlighter:      pygments
+lsi:              true
+
+# ----------------------------------
+# Path settings
+# ----------------------------------
+plugins:          _source/_plugins
+source:           _source
+destination:      _site
+exclude:          [resources, template, .xml, .php, WXR]
+permalink:        none
+paginate:         7
+paginate_path:    'blog/page/:num'
+
+excerpt_separator: "\n\n"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: post
+      author: Shashank Sharma
+      comments: open # enable disqus by default to all posts
+  -
+    scope:
+      path: "blog"
+      type: "page"
+    values:
+      layout: base
+      category: blog
+      dsq_count: true
+  -
+    scope:
+      path: "blog/category"
+      type: "page"
+    values:
+      layout: post_category
+      category: blog
+      dsq_count: true
+
+# safe:        false
+host:        127.0.0.1
+port:        4000
