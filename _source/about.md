@@ -25,7 +25,7 @@ today, he is considered **[FullStack Developer](/about/)** with skills in
 - MySQL, SQLite, MS SQLServer, Mongo, Neo4j, BigQuery and  REDIS
 - Web Performance and Security
 - Usability and Web Accessibility
-- Mobile application development
+- Backend application development
 
 <hr>
 
