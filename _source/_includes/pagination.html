@@ -1,0 +1,20 @@
+
+              <nav class="pagination" role="pagination">
+                <ul class="pager">
+              {% if paginator.previous_page %}
+
+                {% if paginator.previous_page == 1 %}
+                  <li class="prev"><a href="{{ site.blog_url }}/" title="Page 1">&lsaquo; Page 1</a></li>
+                {% else %}
+                  <li class="prev"><a href="{{ site.blog_url }}/page/{{ paginator.previous_page }}">&lsaquo; Page {{ paginator.previous_page }}</a></li>
+                {% endif %}
+
+              {% else %}
+                <li class="prev disabled"><a href="javascript:;" title="Home page">Home page</a></li>
+              {% endif %}
+
+              {% if paginator.next_page %}
+                  <li class="next"><a href="{{ site.blog_url }}/page/{{ paginator.next_page }}" title="Page {{ paginator.next_page }}">Page {{ paginator.next_page }} &rsaquo;</a></li>
+              {% endif %}
+                </ul>
+              </nav><!-- /.Pagination -->

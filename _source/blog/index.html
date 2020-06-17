@@ -1,0 +1,24 @@
+---
+title: Blog
+description: Matters related to web development and technology.
+---
+
+{% for post in site.posts %}
+<article class="post">
+
+  {% include post-header.html %}
+
+  <section class="post-excerpt">
+
+    {{ post.excerpt }}
+
+    <div class="clearfix"></div>
+    <p><a href="{{ post.url }}" title="{{ post.title }}" class="btn">read more</a></p>
+
+  </section>
+</article>
+{% endfor %}
+
+{% include pagination.html %}
+
+{% include dsq_count.html %}

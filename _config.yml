@@ -1,7 +1,3 @@
-theme: jekyll-theme-cayman
-name: Shashank Sharma
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
 # ----------------------------------
 # Site attributes
 # ----------------------------------
@@ -16,8 +12,10 @@ author:
   twitter:        https://twitter.com/shashankupadh13
   github:         https://github.com/shashank34
   facebook:       https://www.facebook.com/shashanks835
-  avatar:         https://en.gravatar.com/userimage/188044257/62967d251689545aa833ffff0af23d57.jpg?size=200
-  # avatar:         http://127.0.0.1:4000/images/ad6facb479066db3b8007443ce79fcdd.jpg
+  linkedin:       https://www.linkedin.com/in/shashank-sharma-ssh
+  avatar:         https://en.gravatar.com/userimage/188044257/62967d251689545aa833ffff0af23d57.jpg?size=150
+
+footer_text:     'Shaking the snow globe'
 
 # ----------------------------------
 # Site settings
@@ -25,24 +23,36 @@ author:
 baseurl:          ""
 blog_url:         "/blog"
 url:              "https://shashank34.github.io"
-locale:           pt-br
+locale:           en
 disqus_enable:    true
 disqus_shortname: shashankssh
+# gems:      [jekyll-paginate]
 
 #ga_tracker_id:    5189486-5 # ==> blog.adrianorosa.com
 
 encoding:         UTF-8
 timezone:         Asia/Kolkata
 
+
+
+
 # ----------------------------------
 # Build settings
 # ----------------------------------
-# markdown:    kramdown
-# kramdown:
-#   input: GFM
-markdown:         redcarpet
-redcarpet:
-  extensions: ["with_toc_data", "autolink"]
+markdown:         kramdown
+# markdown_ext:     "markdown,mkdown,mkdn,mkd,md"
+keep_files:       [".git", ".svn", ".png", ".js", ".css", ".jpeg"]
+
+kramdown:
+  input:          GFM
+  # auto_ids:       true
+  # footnote_nr:    1
+  # entity_output:  as_char
+  # toc_levels:     1..6
+  # smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  # enable_coderay: false
+
+
 
 highlighter:      pygments
 lsi:              true
@@ -50,13 +60,17 @@ lsi:              true
 # ----------------------------------
 # Path settings
 # ----------------------------------
-plugins:          _source/_plugins
+plugins_dir:      _source/_plugins
 source:           _source
 destination:      _site
+# layouts_dir:      _source/_layouts
+# data_dir:         _source/_data
 exclude:          [resources, template, .xml, .php, WXR]
 permalink:        none
 paginate:         7
 paginate_path:    'blog/page/:num'
+# include:          ['_pages']
+
 
 excerpt_separator: "\n\n"
 
@@ -87,5 +101,5 @@ defaults:
       dsq_count: true
 
 # safe:        false
-# host:        127.0.0.1
-# port:        4000
+host:        127.0.0.1
+port:        4000

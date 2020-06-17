@@ -1,0 +1,275 @@
+I"Õ><p>Setting up a cloud server using Amazon AWS cloud computing services is very simple and fast, in just a few minutes you can have your Linux or Windows Server up and running. This article covers the main instructions for creating an instance (server) with a Linux Ubuntu 14.10 distribution using the Amazon AWS EC2 (Elastic Cloud Computing) service.</p>
+
+<h2 id="index">Index</h2>
+<!-- MarkdownTOC autolink=true bracket=round  depth=3 -->
+
+<ul>
+  <li><a href="#1.-introduction">1. Introduction</a></li>
+  <li><a href="#2.-requirements">2. Requirements</a></li>
+  <li><a href="#3.-select-region">3. Select region</a></li>
+  <li><a href="#4.-configure-security-group">4. Configure security group</a></li>
+  <li><a href="#5.-create-an-ec2-instance">5. Create an EC2 Instance</a>
+    <ul>
+      <li><a href="#step-1:-choose-an-amazon-machine-image-(ami)">Step 1: Choose an Amazon Machine Image (AMI)</a></li>
+      <li><a href="#step-2:-choose-an-instance-type">Step 2: Choose an Instance Type</a></li>
+      <li><a href="#step-3:-configure-instance-details">Step 3: Configure Instance Details</a></li>
+      <li><a href="#step-4:-add-storage">Step 4: Add Storage</a></li>
+      <li><a href="#step-5:-tag-instance">Step 5: Tag Instance</a></li>
+      <li><a href="#step-6:-configure-security-group">Step 6: Configure Security Group</a></li>
+      <li><a href="#step-7:-review-instance-launch">Step 7: Review Instance Launch</a></li>
+    </ul>
+  </li>
+  <li><a href="#6.-create-elastic-ip-and-associate-it-with-an-instance">6. Create Elastic IP and associate it with an instance</a></li>
+  <li><a href="#7.-connect-to-instance-via-ssh">7.Connect to Instance via SSH</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<ol>
+  <li>
+    <h2 id="introduciton">Introduciton</h2>
+    <p>In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#E">different nomenclatures</a> for its services, therefore, terms such as, <strong><em>Instance</em></strong> means <strong>Server</strong> , <strong><em>Elastic IP</em></strong> means <strong>Fixed IP</strong>, <strong><em>Security Group</em></strong> means  <strong>Firewall</strong> and <strong><em>Console</em></strong> means <strong>Panel</strong>.</p>
+  </li>
+  <li>
+    <h2 id="requirements">Requirements</h2>
+    <p>To proceed with this article, it is necessary to::</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Having an <a href="http://aws.amazon.com/pt/free/">Amazon AWS</a> account, I assume you have already created it, and that you are already logged in with your credentials on <a href="https://console.aws.amazon.com/ec2/v2/home">AWS console</a>.</li>
+  <li>Understand how to connect to a remote server via SSH.</li>
+  <li>Have<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a> installed (Windows users only).</li>
+</ul>
+
+<ol>
+  <li>
+    <h2 id="select-a-region">Select a region</h2>
+    <p>After entering the AWS <a href="https://console.aws.amazon.com/ec2/v2/home">console</a>  is necessary to define a standard region where your data and servers will be stored, Amazon AWS has DataCenter around the world if you want to target services to users nationwide, then choose the region Mumbai.</p>
+  </li>
+</ol>
+
+<p>Each region where Amazon has a DataCenter is identified by a unique ID, In Mumbai is <code>ap-south-1</code>, for example. in California it is <code>us-west-1</code>.  Prices also vary from region to region at the moment Mumbai. A Oregon region  <code>us-west-2</code> n the United States has the lowest cost for AWS services, however it is necessary to take into account the latency due to the distance between one region and another.</p>
+
+<p>Well, to select a region where your server and services will be allocated, access the menu in the upper right corner of the console.</p>
+
+<!-- <div class="img-wrap text-center">
+<img src="/images/2014/09/image1.png" alt="" class="img-thumbnail" width="200">
+<span>image 3.1: Select a region</span>
+</div> -->
+
+<p>After selecting a region, click on the <a href="https://console.aws.amazon.com/ec2/v2/home?region=ap-south-1">EC2</a> service.</p>
+
+<ol>
+  <li>
+    <h2 id="configure-security-group">Configure Security Group</h2>
+  </li>
+</ol>
+
+<p>Before creating an instance, it is important to define a  <strong>Security Group</strong> with access permissions according to its objective, in which case a new <strong>Security Group</strong> will be defined to meet the requirements of a web server, therefore it will be necessary to release TCP ports 80 for access via HTTP protocol and 22 to be able to connect to the server remotely via SSH.</p>
+
+<p>In the left side menu of the <a href="https://console.aws.amazon.com/ec2/v2/home?region=ap-south-1">ec2</a> console locate the item <code>NETWORK &amp; SECURITY</code> click on <strong>Security Groups</strong>, then on the <strong>Create Security Group</strong>, button , a dialog window as in <small>image 4.1 </small> should be displayed..</p>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/image2.png" alt="" class="img-thumbnail" width="100%" />
+<span>image 4.1: Configure Security Group</span>
+</div>
+
+<p>In this window, in the <strong>Inbound</strong> tab correctly fill in the most important fields:</p>
+
+<ul>
+  <li><strong>Security group name</strong>: Name this Security Group.</li>
+  <li><strong>Description</strong> :  Enter a description to identify this Security Group.</li>
+</ul>
+
+<p>Now, add the firewall rules by clicking the <strong>Add Rule</strong>
+button in the column <code>Type</code> select the <strong>TCP</strong> protocol <code>HTTP</code> and then the same process also add the protocol for <code>SSH</code>.</p>
+
+<blockquote>
+  <p><strong>IMPORTANT:</strong> As this instance will still go through several configurations and tests to become a publicly accessible webserver, then it is recommended to temporarily release accesses only for your IP, in the <strong>Source</strong> olumn inform your IP address, as you can see in the <em>image 4.1</em>.</p>
+</blockquote>
+
+<p>To finish click <strong>Create</strong>.</p>
+
+<ol>
+  <li>
+    <h2 id="create-an-ec2-instance">Create an EC2 instance</h2>
+    <p>Well, now in the side menu of the <small>image 5.1</small> console click on Instances and then click on the <strong>Launch Instance</strong>.</p>
+  </li>
+</ol>
+<div class="img-wrap text-center">
+<img src="/images/aws/image-create-instance.png" alt="" class="img-thumbnail" width="400" />
+<span>imagem 5.1: Create an EC2 Instance</span>
+</div>
+
+<p>A window with seven steps will open until the installation is complete, in step one select an image (AMI) you want to install, you can create an instance using Linux and Windows Server distributions. For this article, a Linux Ubuntu 14.10 distribution will be used and the type of virtualization will be HVM..</p>
+
+<h3 id="step-1-choose-an-amazon-machine-image-ami">Step 1: Choose an Amazon Machine Image (AMI)</h3>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-1.png" alt="" class="img-thumbnail" width="100%" />
+<span>image 5.1: Choose an image (AMI)</span>
+</div>
+
+<p><strong>Important:</strong>  In the new generation of AWS instances, choose the type of virtualization HVM for better performance.</p>
+
+<p>To proceed click  <strong>Next</strong>.</p>
+
+<h3 id="step-2-choose-an-instance-type">Step 2: Choose an Instance Type</h3>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-2.png" alt="" class="img-thumbnail" width="100%" />
+<span>image 5.2: Choose a type of instant</span>
+</div>
+
+<p>In this screen <small>image 5.2</small> echoose the type of hardware for your instance according to your needs. if Free Tier User is eligible you can choose to <code>t2.micro</code>.</p>
+
+<p>Then click <strong>Next</strong>.</p>
+
+<h3 id="step-3-configure-instance-details">Step 3: Configure Instance Details</h3>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-3.png" alt="" class="img-thumbnail" width="100%" />
+<span>image 5.3: Configure Instance Details</span>
+</div>
+
+<p>In this screen  <small>image 5.3</small> just check the option <strong>Enable termination protection</strong> to prevent you from accidentally deleting this instance. Then click <strong>Next</strong>.</p>
+
+<h3 id="step-4-add-storage">Step 4: Add Storage</h3>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-4.png" alt="" class="img-thumbnail" width="100%" />
+<span>image 5.4: Configure Storage Amount</span>
+</div>
+
+<p>In the screen  <small>image 5.4</small> define the amount of storage in the <strong>Size (GiB)</strong> column , for best performance choose the type of storage <code>SSD</code> or <code>Provisioned IOPS (SSD)</code>.</p>
+
+<p>Click  <strong>Next</strong> to continue.</p>
+
+<h3 id="step-5-tag-instance">Step 5: Tag Instance</h3>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-5.png" alt="" class="img-thumbnail" width="100%" />
+<span>image 5.5: Create Instance Tags</span>
+</div>
+
+<p>This screen <small>image 5.5</small> is optional,  if necessary add tags to identify your instance, then click <strong>Next</strong>.</p>
+
+<h3 id="step-6-configure-security-group">Step 6: Configure Security Group</h3>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-6.png" alt="" class="img-thumbnail" width="100%" />
+<span>imagem 5.6: Configure Security Group</span>
+</div>
+
+<p>In this step, <small>image 5.6</small> in the item <strong>Assign a security group</strong> check the option <strong>Select an existing security group</strong> and choose the <strong>Security Group</strong> that you created earlier, to finish click on  <strong>Review and Launch</strong>.</p>
+
+<h3 id="step-7-review-instance-launch">Step 7: Review Instance Launch</h3>
+
+<p>- Review your settings then click <strong>Launch</strong>.<br />
+- AAfter clicking on <strong>Launch</strong> a dialog window will open <small> image 5.7 </small>, so that you have access to your instance via SSH in this window create your key pair or select an existing one.</p>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-7.png" alt="" class="img-thumbnail" width="400" />
+<span>image 5.7: Select Key Pair or create one.</span>
+</div>
+
+<p>If you select the option: <strong>cyou will have to give a name to this key pair <small> image 5.7.1 </small> , and then click the **Download Key Pair</strong>, button , save this file on your computer and later change the permissions of that file to only reading.</p>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/step-7.1.png" alt="" class="img-thumbnail" width="400" />
+<span>image 5.7.1: Create Key Pair</span>
+</div>
+
+<p><strong>ATTENTION:</strong> The private key will be used for you to connect to the instance via SSH. Without this key you will not be able to access the instance at all.</p>
+
+<p>Click the  <strong>Launch Instance</strong> button and Done your instance will be created..</p>
+
+<p>After that, go back to the EC2 Instances console and see in the description of this instance all the necessary information you need to connect via SSH, you can use the data from your <strong>Public IP</strong> or <strong>Public DNS</strong>.</p>
+
+<p>So far so good, but the only problem is that when it is created it receives a <strong>Public IP</strong> and a <strong>Public DNS</strong> ex: <strong>ec2-XX-XX-XX-XX.ap-south-1.compute.amazonaws.com</strong> Where X is your <strong>Public IP</strong>, you can use both to connect or access your website, but every time you restart your instance this IP address and DNS change, so to resolve this issue it is important to associate a fixed IP to your instance using <strong>Elastic IP</strong> even because if you want to maintain a webserver you will have to have a fixed IP anyway..</p>
+
+<p>Step 3 ends here, the next step is to create and associate an Elastic IP to that instance.</p>
+
+<ol>
+  <li>
+    <h2 id="create-elastic-ip-and-associate-it-with-an-instance">Create Elastic IP and associate it with an instance</h2>
+  </li>
+</ol>
+
+<p>In the side menu of the EC2 console go to <code>NETWORK &amp; SECURITY</code> and click on <strong>Elastic IP</strong>, then click on  <strong>Allocate New Address</strong>, click on <strong>Yes, Allocate</strong>.</p>
+
+<!-- <div class="img-wrap text-center">
+<img src="/images/2014/09/elastic-ip.png" alt="" class="img-thumbnail" width="250">
+<span>imagem 6.1</span>
+</div> -->
+
+<p>After clicking yes <strong>Yes</strong> one the new <strong>Elastic IP</strong> swill be allocated, now it is necessary to associate this IP to your instance, then on that same screen select the newly allocated IP address and click on <strong>Associate Address</strong>, this will open a new dialog window  <small>image 6.2</small>.</p>
+
+<div class="img-wrap text-center">
+<img src="/images/aws/image-associate-address.png" alt="" class="img-thumbnail" width="100%" />
+<span>image 6.2</span>
+</div>
+
+<p>Just click on the <strong>Instance</strong> field and the console will intelligently display a list of your instances, select the instance on which you want to allocate this <strong>Elastic IP</strong>. To finish click on <strong>Associate</strong>.</p>
+
+<p>Now back to the EC2 Instances console, see in the description of your Linux instance a public fixed IP has been defined. Now you can use this address whenever you connect to your instance.</p>
+
+<ol>
+  <li>
+    <h2 id="connect-the-instance-via-ssh">Connect the Instance via SSH</h2>
+  </li>
+</ol>
+
+<p>Your Linux instance was created, an Elastic IP was associated! It is now possible to connect the instance securely via SSH, using your private key saved when creating the instance.</p>
+
+<p>On Windows you must use the Putty program to access your server via SSH <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">see here how to connect</a>.</p>
+
+<p>On UNIX systems, just open the terminal and first change the permission of your private key:</p>
+
+<pre><code>chmod 400 MyKeyPair.pem
+</code></pre>
+
+<p>Then you can connect the instance using the private key <code>MyKeyPair.pem</code></p>
+
+<p>SSH command to connect the instance remotely</p>
+
+<pre><code>$ ssh -i MyKeyPair.pem ubuntu@XX.XXX.XXX.XX
+</code></pre>
+
+<blockquote>
+  <p><strong>Tip:</strong> you can also connect using your <strong>DNS</strong> address ex:</p>
+</blockquote>
+
+<pre><code>$ ssh -i MyKeyPair.pem ubuntu@ec2-XX-XX-XXX-XXX.ap-south-1.compute.amazonaws.com
+</code></pre>
+
+<blockquote>
+  <p><strong>Tip:</strong> the default user on Linux Ubuntu is: <code>ubuntu</code> other Linux distributions can be <code>ec2-user</code> or <code>root</code>, but the process for connecting is the same.</p>
+</blockquote>
+
+<p>If everything was done correctly the following Ubuntu welcome screen will be displayed:</p>
+
+<!-- <div class="img-wrap text-center">
+<img src="/images/2014/09/connect-ssh.png" alt="" class="img-thumbnail" width="400">
+<span>imagem 7.1: Conex√£o via SSH</span>
+</div> -->
+
+<p>Now having remote access to the instance it is possible to proceed with the other necessary configurations for a web server, these next steps will be detailed in next upcoming articles:</p>
+
+<ul>
+  <li>How to setup linux Ubunut server</li>
+  <li>How to configure a Linux Ubuntu Web server with PHP5, Apache and MySQL (LAMP).</li>
+  <li>How to configure a Linux Web server with PHP5, Nginx and MySQL.</li>
+</ul>
+
+<p>More tips can be found in this article:</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>We saw how to create a server in the AWS cloud, but what we call <code>Instance</code>, in a few clicks we have a web server up and running in one of the largest Cloud Computing companies, this is a simple installation, but there are several services and possibilities, depending on your type of business or project.</p>
+
+<!-- [Como configurar um servidor Linux Ubuntu]: /blog/linux/configurar-webserver-linux-ubuntu-php-e-apache-nginx.html -->
+
+<!-- [vhost]: /blog/nginx/setup-server-block-virtual-host-com-nginx.html -->
+:ET

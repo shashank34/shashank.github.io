@@ -1,0 +1,30 @@
+
+<aside class="col-sm-3 col-sm-offset-1 blog-sidebar">
+  <div class="sidebar-module sidebar-module-inset author-brief">
+    <h4><img src="{{ site.author.avatar }}" alt="" class="img-circle" width="50" height="50"> About Shashank</h4>
+
+    <p>
+      Shashank has been a Backend Developer since 2016. Passionate about what he does!
+      Over the years, he has specialized in various web development technologies,
+      today he is considered FullStack Developer.
+    </p>
+    <hr>
+    <ul>
+      <li><a href="{{ site.author.github }}" class="_blank" title="see my profile on Github"><i class="fa fa-github" aria-hidden="true" ></i> <span class="hide-text">GitHub</span></a></li>
+      <li><a href="{{ site.author.twitter }}" class="_blank" title="see my profile on Twitter"><i class="fa fa-twitter" aria-hidden="true" ></i> <span class="hide-text">Twitter</span></a></li>
+      <li><a href="{{ site.author.facebook }}" class="_blank" title="see my profile on Facebook"><i class="fa fa-facebook" aria-hidden="true" ></i> <span class="hide-text">Facebook</span></a></li>
+      <li><a href="{{ site.author.linkedin }}" class="_blank" title="see my profile on Linkedin"><i class="fa fa-linkedin"  aria-hidden="true" ></i> <span class="hide-text">Facebook</span></a></li>
+      <li><a href="/feed.xml" class="_blank" title="follow the blog updates"><i class="fa fa-rss"></i> <span class="hide-text">Rss</span></a></li>
+
+    </ul>
+  </div>
+
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ol class="list-unstyled">
+      {% for category in site.data.categories %}
+      <li{% if category.slug == page.category or category.slug == page.slug %} class="active"{% endif %}><a href="{{ site.blog_url }}/category/{{ category.slug }}" title="{{ category.label }}">{{ category.label }}</a></li>
+      {% endfor %}
+    </ol>
+  </div>
+</aside><!-- /.blog-sidebar -->

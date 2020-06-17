@@ -1,0 +1,33 @@
+[
+    {
+        "label": "AWS",
+        "slug": "aws",
+        "lead": "Amazon Web Services"
+    },
+    {
+        "label": "Nodejs",
+        "slug": "nodejs",
+        "lead": "Nodejs developement environment"
+    },
+    {
+        "label": "Python",
+        "slug": "python",
+        "lead": "Python app developement environment"
+    },
+    {
+        "label": "Security",
+        "slug": "security",
+        "lead": "Web security articles and tips"
+    },
+    {
+        "label": "AI",
+        "slug": "ai",
+        "lead": "machine learning and nlp in industries"
+    },
+    {
+        "label": "Websockets",
+        "slug": "websockets",
+        "lead": "websockets and socket.io"
+    }
+    ]
+    
