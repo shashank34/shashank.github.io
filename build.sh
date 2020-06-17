@@ -14,7 +14,7 @@ WEBROOT=`pwd`
 if [[ ! $STATUS ]]; then
 
   jekyll build
-  git checkout gh-pages
+  git checkout master
   cp -r _site/ $WEBROOT
   rm -r _site
   # open /Applications/GitHub.app
