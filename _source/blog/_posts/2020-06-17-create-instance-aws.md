@@ -18,7 +18,7 @@ Index
 - [Select region](#select-region)
 - [Configure security group](#configure-security-group)
 - [Create an EC2 Instance](#create-an-ec2-instance)
-  - [Step 1: Choose an Amazon Machine Image (AMI)](#step-1-choose-an-amazon-machine-image-(ami))
+  - [Step 1: Choose an Amazon Machine Image (AMI)](#step-1-choose-an-amazon-machine-image-ami)
   - [Step 2: Choose an Instance Type](#step-2-choose-an-instance-type)
   - [Step 3: Configure Instance Details](#step-3-configure-instance-details)
   - [Step 4: Add Storage](#step-4-add-storage)
