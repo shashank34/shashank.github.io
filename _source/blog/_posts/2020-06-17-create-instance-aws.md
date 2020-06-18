@@ -31,7 +31,7 @@ Index
 
 <!-- /MarkdownTOC -->
 
-1. Introduciton
+##1. Introduction
 -----------------
 In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses [different nomenclatures][glossary] for its services, therefore, terms such as, ***Instance*** means **Server** , ***Elastic IP*** means **Fixed IP**, ***Security Group*** means  **Firewall** and ***Console*** means **Panel**.
 
@@ -41,7 +41,7 @@ To proceed with this article, it is necessary to::
 
 - Having an [Amazon AWS][signup] account, I assume you have already created it, and that you are already logged in with your credentials on [AWS console][console].
 - Understand how to connect to a remote server via SSH.
-- Have[Putty][putty] installed (Windows users only).
+- Have [Putty][putty] installed (Windows users only).
 
 3. Select a region
 -------------------------
@@ -170,7 +170,7 @@ In this step, <small>image 5.6</small> in the item **Assign a security group** c
 <span>image 5.7: Select Key Pair or create one.</span>
 </div>
 
-If you select the option: **cyou will have to give a name to this key pair <small> image 5.7.1 </small> , and then click the **Download Key Pair**, button , save this file on your computer and later change the permissions of that file to only reading.
+If you select the option: **you will have to give a name to this key pair** <small> image 5.7.1 </small> , and then click the **Download Key Pair**, button , save this file on your computer and later change the permissions of that file to only reading.
 
 <div class="img-wrap text-center">
 <img src="/images/aws/step-7.1.png" alt="" class="img-thumbnail" width="400">
