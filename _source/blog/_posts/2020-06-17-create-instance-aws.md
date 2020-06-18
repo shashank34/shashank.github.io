@@ -16,17 +16,17 @@ Index
 - [1. Introduction](#introduction)
 - [2. Requirements](#requirements)
 - [3. Select region](#select-region)
-- [4. Configure security group](#4.-configure-security-group)
-- [5. Create an EC2 Instance](#5.-create-an-ec2-instance)
-  - [Step 1: Choose an Amazon Machine Image (AMI)](#step-1:-choose-an-amazon-machine-image-(ami))
+- [4. Configure security group](#configure-security-group)
+- [5. Create an EC2 Instance](#create-an-ec2-instance)
+  - [Step 1: Choose an Amazon Machine Image (AMI)](#choose-an-amazon-machine-image-(ami))
   - [Step 2: Choose an Instance Type](#step-2:-choose-an-instance-type)
   - [Step 3: Configure Instance Details](#step-3:-configure-instance-details)
   - [Step 4: Add Storage](#step-4:-add-storage)
   - [Step 5: Tag Instance](#step-5:-tag-instance)
   - [Step 6: Configure Security Group](#step-6:-configure-security-group)
   - [Step 7: Review Instance Launch](#step-7:-review-instance-launch)
-- [6. Create Elastic IP and associate it with an instance](#6.-create-elastic-ip-and-associate-it-with-an-instance)
-- [7.Connect to Instance via SSH](#7.-connect-to-instance-via-ssh)
+- [6. Create Elastic IP and associate it with an instance](#create-elastic-ip-and-associate-it-with-an-instance)
+- [7. Connect to Instance via SSH](#connect-to-instance-via-ssh)
 - [Conclusion](#conclusion)
 
 <!-- /MarkdownTOC -->
@@ -43,7 +43,7 @@ To proceed with this article, it is necessary to::
 - Understand how to connect to a remote server via SSH.
 - Have [Putty][putty] installed (Windows users only).
 
-3. Select a region
+3. Select region
 -------------------------
 After entering the AWS [console]  is necessary to define a standard region where your data and servers will be stored, Amazon AWS has DataCenter around the world if you want to target services to users nationwide, then choose the region Mumbai.
 
@@ -208,7 +208,7 @@ Just click on the **Instance** field and the console will intelligently display 
 
 Now back to the EC2 Instances console, see in the description of your Linux instance a public fixed IP has been defined. Now you can use this address whenever you connect to your instance.
 
-7. Connect the Instance via SSH
+7. Connect to Instance via SSH
 ----------------------------------
 
 Your Linux instance was created, an Elastic IP was associated! It is now possible to connect the instance securely via SSH, using your private key saved when creating the instance.
