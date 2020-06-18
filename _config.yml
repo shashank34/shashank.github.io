@@ -61,6 +61,8 @@ lsi:              true
 # Path settings
 # ----------------------------------
 plugins_dir:      _source/_plugins
+plugins:
+  - jekyll-sitemap 
 source:           _source
 destination:      _site
 # layouts_dir:      _source/_layouts
