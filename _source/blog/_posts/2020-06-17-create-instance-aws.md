@@ -13,11 +13,11 @@ Index
 ----------------
 <!-- MarkdownTOC autolink=true bracket=round  depth=3 -->
 
-- [1. Introduction](#1.-introduction)
-- [2. Requirements](#2.-requirements)
-- [3. Select region](#3.-select-region)
-- [4. Configure security group](#4-configure-security-group)
-- [5. Create an EC2 Instance](#5-create-an-ec2-instance)
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Select region](#select-region)
+- [Configure security group](#configure-security-group)
+- [Create an EC2 Instance](#create-an-ec2-instance)
   - [Step 1: Choose an Amazon Machine Image (AMI)](#step-1:-choose-an-amazon-machine-image-(ami))
   - [Step 2: Choose an Instance Type](#step-2:-choose-an-instance-type)
   - [Step 3: Configure Instance Details](#step-3:-configure-instance-details)
@@ -25,17 +25,17 @@ Index
   - [Step 5: Tag Instance](#step-5:-tag-instance)
   - [Step 6: Configure Security Group](#step-6:-configure-security-group)
   - [Step 7: Review Instance Launch](#step-7:-review-instance-launch)
-- [6. Create Elastic IP and associate it with an instance](#6.-create-elastic-ip-and-associate-it-with-an-instance)
-- [7. Connect to Instance via SSH](#7.-connect-to-instance-via-ssh)
+- [Create Elastic IP and associate it with an instance](#create-elastic-ip-and-associate-it-with-an-instance)
+- [Connect to Instance via SSH](#connect-to-instance-via-ssh)
 - [Conclusion](#conclusion)
 
 <!-- /MarkdownTOC -->
 
-1. Introduction
+Introduction
 -----------------
 In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses [different nomenclatures][glossary] for its services, therefore, terms such as, ***Instance*** means **Server** , ***Elastic IP*** means **Fixed IP**, ***Security Group*** means  **Firewall** and ***Console*** means **Panel**.
 
-2. Requirements
+Requirements
 -----------------
 To proceed with this article, it is necessary to:
 
@@ -44,7 +44,7 @@ To proceed with this article, it is necessary to:
 - Have [Putty][putty] installed (Windows users only).
 
 
-3. Select region
+Select region
 -------------------------
 After entering the AWS [console]  is necessary to define a standard region where your data and servers will be stored, Amazon AWS has DataCenter around the world if you want to target services to users nationwide, then choose the region Mumbai.
 
@@ -59,7 +59,7 @@ Well, to select a region where your server and services will be allocated, acces
 
 After selecting a region, click on the [EC2][ec2] service.
 
-4. Configure Security Group
+Configure Security Group
 ---------------------------------------------
 
 Before creating an instance, it is important to define a  **Security Group** with access permissions according to its objective, in which case a new **Security Group** will be defined to meet the requirements of a web server, therefore it will be necessary to release TCP ports 80 for access via HTTP protocol and 22 to be able to connect to the server remotely via SSH.
@@ -79,12 +79,12 @@ In this window, in the **Inbound** tab correctly fill in the most important fiel
 Now, add the firewall rules by clicking the **Add Rule**
 button in the column `Type` select the **TCP** protocol `HTTP` and then the same process also add the protocol for `SSH`.
 
-> **IMPORTANT:** As this instance will still go through several configurations and tests to become a publicly accessible webserver, then it is recommended to temporarily release accesses only for your IP, in the **Source** olumn inform your IP address, as you can see in the *image 4.1*.
+**IMPORTANT:** As this instance will still go through several configurations and tests to become a publicly accessible webserver, then it is recommended to temporarily release accesses only for your IP, in the **Source** olumn inform your IP address, as you can see in the *image 4.1*.
 
 To finish click **Create**.
 
 
-5. Create an EC2 instance
+Create an EC2 instance
 -----------------------------------------
 Well, now in the side menu of the <small>image 5.1</small> console click on Instances and then click on the **Launch Instance**.
 <div class="img-wrap text-center">
@@ -163,8 +163,8 @@ In this step, <small>image 5.6</small> in the item **Assign a security group** c
 ### Step 7: Review Instance Launch
 [step7]: #step-7:-review-instance-launch "Step 7: Review Instance Launch"
 
-\- Review your settings then click **Launch**.  
-\- AAfter clicking on **Launch** a dialog window will open <small> image 5.7 </small>, so that you have access to your instance via SSH in this window create your key pair or select an existing one.
+- Review your settings then click **Launch**.  
+- AAfter clicking on **Launch** a dialog window will open <small> image 5.7 </small>, so that you have access to your instance via SSH in this window create your key pair or select an existing one.
 
 <div class="img-wrap text-center">
 <img src="/images/aws/step-7.png" alt="" class="img-thumbnail" width="400">
@@ -188,7 +188,7 @@ So far so good, but the only problem is that when it is created it receives a **
 
 Step 3 ends here, the next step is to create and associate an Elastic IP to that instance.
 
-6. Create Elastic IP and associate it with an instance
+Create Elastic IP and associate it with an instance
 ---------------------------------------------------------
 
 In the side menu of the EC2 console go to `NETWORK & SECURITY` and click on **Elastic IP**, then click on  **Allocate New Address**, click on **Yes, Allocate**.
@@ -209,7 +209,7 @@ Just click on the **Instance** field and the console will intelligently display 
 
 Now back to the EC2 Instances console, see in the description of your Linux instance a public fixed IP has been defined. Now you can use this address whenever you connect to your instance.
 
-7. Connect to Instance via SSH
+Connect to Instance via SSH
 ----------------------------------
 
 Your Linux instance was created, an Elastic IP was associated! It is now possible to connect the instance securely via SSH, using your private key saved when creating the instance.
@@ -226,11 +226,11 @@ SSH command to connect the instance remotely
 
 	$ ssh -i MyKeyPair.pem ubuntu@XX.XXX.XXX.XX
 
-> **Tip:** you can also connect using your **DNS** address ex: 
+  **Tip:** you can also connect using your **DNS** address ex: 
 
 	$ ssh -i MyKeyPair.pem ubuntu@ec2-XX-XX-XXX-XXX.ap-south-1.compute.amazonaws.com
 
-> **Tip:** the default user on Linux Ubuntu is: `ubuntu` other Linux distributions can be `ec2-user` or `root`, but the process for connecting is the same.
+  **Tip:** the default user on Linux Ubuntu is: `ubuntu` other Linux distributions can be `ec2-user` or `root`, but the process for connecting is the same.
 
 If everything was done correctly the following Ubuntu welcome screen will be displayed:
 
