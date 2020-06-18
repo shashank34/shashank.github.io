@@ -31,10 +31,9 @@ Index
 
 <!-- /MarkdownTOC -->
 
-<1. Introduction
+1. Introduction
 -----------------
 In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses [different nomenclatures][glossary] for its services, therefore, terms such as, ***Instance*** means **Server** , ***Elastic IP*** means **Fixed IP**, ***Security Group*** means  **Firewall** and ***Console*** means **Panel**.
-
 
 2. Requirements
 -----------------
