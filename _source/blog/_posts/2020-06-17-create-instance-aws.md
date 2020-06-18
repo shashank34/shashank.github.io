@@ -14,8 +14,8 @@ Index
 <!-- MarkdownTOC autolink=true bracket=round  depth=3 -->
 
 - [1. Introduction](#introduction)
-- [2. Requirements](#2.-requirements)
-- [3. Select region](#3.-select-region)
+- [2. Requirements](#requirements)
+- [3. Select region](#select-region)
 - [4. Configure security group](#4.-configure-security-group)
 - [5. Create an EC2 Instance](#5.-create-an-ec2-instance)
   - [Step 1: Choose an Amazon Machine Image (AMI)](#step-1:-choose-an-amazon-machine-image-(ami))
