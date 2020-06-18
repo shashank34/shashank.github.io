@@ -45,7 +45,7 @@ keep_files:       [".git", ".svn", ".png", ".js", ".css", ".jpeg"]
 
 kramdown:
   input:          GFM
-  # auto_ids:       true
+  auto_ids:       true
   # footnote_nr:    1
   # entity_output:  as_char
   # toc_levels:     1..6
