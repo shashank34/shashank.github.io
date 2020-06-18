@@ -13,9 +13,9 @@ Index
 ----------------
 <!-- MarkdownTOC autolink=true bracket=round  depth=3 -->
 
-- [1. Introduction](#introduction)
-- [2. Requirements](#requirements)
-- [3. Select region](#select-region)
+- [1. Introduction](#1.-introduction)
+- [2. Requirements](#2.-requirements)
+- [3. Select region](#3.-select-region)
 - [4. Configure security group](#configure-security-group)
 - [5. Create an EC2 Instance](#create-an-ec2-instance)
   - [Step 1: Choose an Amazon Machine Image (AMI)](#choose-an-amazon-machine-image-(ami))
@@ -37,7 +37,7 @@ In the approach of this article it is very important to understand some basic te
 
 2. Requirements
 -----------------
-To proceed with this article, it is necessary to::
+To proceed with this article, it is necessary to:
 
 - Having an [Amazon AWS][signup] account, I assume you have already created it, and that you are already logged in with your credentials on [AWS console][console].
 - Understand how to connect to a remote server via SSH.
