@@ -5,8 +5,8 @@
     <description>Shashank Sharma Backend - Web Developer Nodejs,Python</description>
     <link>https://shashank34.github.io/</link>
     <atom:link href="https://shashank34.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Jun 2020 11:20:30 +0530</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2020 11:20:30 +0530</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2020 11:22:27 +0530</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2020 11:22:27 +0530</lastBuildDate>
     <generator>Jekyll v4.1.0</generator>
     
       <item>
@@ -16,8 +16,8 @@
 &lt;!-- MarkdownTOC autolink=true bracket=round  depth=3 --&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;1. Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2.-requirements&quot;&gt;2. Requirements&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3.-select-region&quot;&gt;3. Select region&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;2. Requirements&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#select-region&quot;&gt;3. Select region&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#4.-configure-security-group&quot;&gt;4. Configure security group&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#5.-create-an-ec2-instance&quot;&gt;5. Create an EC2 Instance&lt;/a&gt;
     &lt;ul&gt;
