@@ -5,8 +5,8 @@
     <description>Shashank Sharma Backend - Web Developer Nodejs,Python</description>
     <link>https://shashank34.github.io/</link>
     <atom:link href="https://shashank34.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Jun 2020 11:19:32 +0530</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2020 11:19:32 +0530</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2020 11:20:30 +0530</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2020 11:20:30 +0530</lastBuildDate>
     <generator>Jekyll v4.1.0</generator>
     
       <item>
@@ -15,7 +15,7 @@
 &lt;h2 id=&quot;index&quot;&gt;Index&lt;/h2&gt;
 &lt;!-- MarkdownTOC autolink=true bracket=round  depth=3 --&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#1.-introduction&quot;&gt;1. Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;1. Introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2.-requirements&quot;&gt;2. Requirements&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3.-select-region&quot;&gt;3. Select region&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#4.-configure-security-group&quot;&gt;4. Configure security group&lt;/a&gt;&lt;/li&gt;
@@ -37,7 +37,7 @@
 &lt;!-- /MarkdownTOC --&gt;
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;h2 id=&quot;introduciton&quot;&gt;Introduciton&lt;/h2&gt;
+    &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
     &lt;p&gt;In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses &lt;a href=&quot;http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#E&quot;&gt;different nomenclatures&lt;/a&gt; for its services, therefore, terms such as, &lt;strong&gt;&lt;em&gt;Instance&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Server&lt;/strong&gt; , &lt;strong&gt;&lt;em&gt;Elastic IP&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Fixed IP&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Security Group&lt;/em&gt;&lt;/strong&gt; means  &lt;strong&gt;Firewall&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Console&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Panel&lt;/strong&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -48,7 +48,7 @@
 &lt;ul&gt;
   &lt;li&gt;Having an &lt;a href=&quot;http://aws.amazon.com/pt/free/&quot;&gt;Amazon AWS&lt;/a&gt; account, I assume you have already created it, and that you are already logged in with your credentials on &lt;a href=&quot;https://console.aws.amazon.com/ec2/v2/home&quot;&gt;AWS console&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Understand how to connect to a remote server via SSH.&lt;/li&gt;
-  &lt;li&gt;Have&lt;a href=&quot;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&quot;&gt;Putty&lt;/a&gt; installed (Windows users only).&lt;/li&gt;
+  &lt;li&gt;Have &lt;a href=&quot;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&quot;&gt;Putty&lt;/a&gt; installed (Windows users only).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
   &lt;li&gt;
@@ -142,7 +142,7 @@ button in the column &lt;code&gt;Type&lt;/code&gt; select the &lt;strong&gt;TCP&
 &lt;img src=&quot;/images/aws/step-7.png&quot; alt=&quot;&quot; class=&quot;img-thumbnail&quot; width=&quot;400&quot; /&gt;
 &lt;span&gt;image 5.7: Select Key Pair or create one.&lt;/span&gt;
 &lt;/div&gt;
-&lt;p&gt;If you select the option: &lt;strong&gt;cyou will have to give a name to this key pair &lt;small&gt; image 5.7.1 &lt;/small&gt; , and then click the **Download Key Pair&lt;/strong&gt;, button , save this file on your computer and later change the permissions of that file to only reading.&lt;/p&gt;
+&lt;p&gt;If you select the option: &lt;strong&gt;you will have to give a name to this key pair&lt;/strong&gt; &lt;small&gt; image 5.7.1 &lt;/small&gt; , and then click the &lt;strong&gt;Download Key Pair&lt;/strong&gt;, button , save this file on your computer and later change the permissions of that file to only reading.&lt;/p&gt;
 &lt;div class=&quot;img-wrap text-center&quot;&gt;
 &lt;img src=&quot;/images/aws/step-7.1.png&quot; alt=&quot;&quot; class=&quot;img-thumbnail&quot; width=&quot;400&quot; /&gt;
 &lt;span&gt;image 5.7.1: Create Key Pair&lt;/span&gt;
