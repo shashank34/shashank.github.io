@@ -5,8 +5,8 @@
     <description>Shashank Sharma Backend - Web Developer Nodejs,Python</description>
     <link>https://shashank34.github.io/</link>
     <atom:link href="https://shashank34.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Jun 2020 12:09:08 +0530</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2020 12:09:08 +0530</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2020 12:12:22 +0530</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2020 12:12:22 +0530</lastBuildDate>
     <generator>Jekyll v4.1.0</generator>
     
       <item>
@@ -21,13 +21,13 @@
   &lt;li&gt;&lt;a href=&quot;#configure-security-group&quot;&gt;Configure security group&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#create-an-ec2-instance&quot;&gt;Create an EC2 Instance&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-1:-choose-an-amazon-machine-image-(ami)&quot;&gt;Step 1: Choose an Amazon Machine Image (AMI)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-2:-choose-an-instance-type&quot;&gt;Step 2: Choose an Instance Type&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-3:-configure-instance-details&quot;&gt;Step 3: Configure Instance Details&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-4:-add-storage&quot;&gt;Step 4: Add Storage&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-5:-tag-instance&quot;&gt;Step 5: Tag Instance&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-6:-configure-security-group&quot;&gt;Step 6: Configure Security Group&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-7:-review-instance-launch&quot;&gt;Step 7: Review Instance Launch&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-1-choose-an-amazon-machine-image-(ami)&quot;&gt;Step 1: Choose an Amazon Machine Image (AMI)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-2-choose-an-instance-type&quot;&gt;Step 2: Choose an Instance Type&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-3-configure-instance-details&quot;&gt;Step 3: Configure Instance Details&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-4-add-storage&quot;&gt;Step 4: Add Storage&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-5-tag-instance&quot;&gt;Step 5: Tag Instance&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-6-configure-security-group&quot;&gt;Step 6: Configure Security Group&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-7-review-instance-launch&quot;&gt;Step 7: Review Instance Launch&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#create-elastic-ip-and-associate-it-with-an-instance&quot;&gt;Create Elastic IP and associate it with an instance&lt;/a&gt;&lt;/li&gt;
