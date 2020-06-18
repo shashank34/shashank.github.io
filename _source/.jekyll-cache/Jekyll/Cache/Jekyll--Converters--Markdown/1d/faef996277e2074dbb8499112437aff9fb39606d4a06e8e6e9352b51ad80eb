@@ -1,82 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+I"‘><p>Setting up a cloud server using Amazon AWS cloud computing services is very simple and fast, in just a few minutes you can have your Linux or Windows Server up and running. This article covers the main instructions for creating an instance (server) with a Linux Ubuntu 14.10 distribution using the Amazon AWS EC2 (Elastic Cloud Computing) service.</p>
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Create an instance on Amazon AWS | Shashank Sharma</title>
-    <meta name="description" content="Setting up a cloud server using Amazon AWS cloud computing services is very simple and fast, in just a few minutes you can have your Linux or Windows Server up and running. This article covers the main instructions for creating an instance (server) with a Linux Ubuntu 14.10 distribution using the Amazon AWS EC2 (Elastic Cloud Computing) service.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Shashank Sharma">
-    <link rel="apple-touch-icon-precomposed" href="/images/logo.png">
-    <link rel="icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="/assets/css/application-style.css"/>
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600">
-    <!--[if IE]><script src="/assets/js/ie10-viewport.js"></script><![endif]-->
-    <!--[if lt IE 9]>
-      <script src="/assets/js/html5shiv.min.js"></script>
-      <script src="/assets/js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="canonical" href="https://shashank34.github.io/blog/aws/create-instance-aws.html" />
-    <link rel="alternate" type="application/rss+xml" title="Shashank Sharma &raquo; Feed" href="https://shashank34.github.io/feed.xml" />
-    <!-- OpenGraphic tags -->
-    <meta property="og:locale" content="en" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Create an instance on Amazon AWS" />
-    <meta property="og:description" content="Setting up a cloud server using Amazon AWS cloud computing services is very simple and fast, in just a few minutes you can have your Linux or Windows Server up and running. This article covers the main instructions for creating an instance (server) with a Linux Ubuntu 14.10 distribution using the Amazon AWS EC2 (Elastic Cloud Computing) service." />
-    <meta property="og:url" content="https://shashank34.github.io/blog/aws/create-instance-aws.html" />
-    <meta property="og:site_name" content="Shashank Sharma" />
-    <meta property="article:author" content="Shashank Sharma" />
-    <meta property="og:image" content="https://shashank34.github.io/images/logo.png" />
-  </head>
-  <body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/" title="Shashank Sharma">Shashank <strong>Sharma</strong></a>
-        </div>
-        <nav class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/" title="Home">Home</a></li>
-            <li><a href="/about/" title="About">About</a></li>
-            <li class="active"><a href="/blog/" title="Blog Articles">Blog</a></li>
-          </ul>
-        </nav><!--/.nav-collapse -->
-      </div>
-    </div>
-    <!-- /.header -->
-    <div class="blog-header">
-      <div class="container">
-          <h1 class="blog-title">
-                  AWS
-          </h1>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-          <div class="col-sm-8 content">
-<article class="post">
-  <header class="post-header">
-<h1 class="post-title">Create an instance on Amazon AWS</h1>
-<p class="post-meta">
-<time class="post-time" datetime="2020-05-05"><i class="ico ico-clock"></i> 05 May 2020</time> &mdash;
-<span class="post-category">
-<a href="/blog/category/aws" title="Articles in categories AWS">AWS</a>
-</span> &mdash;
-<i class="ico ico-comment"></i> <a href="https://shashank34.github.io/blog/aws/create-instance-aws.html#disqus_thread" title="Comment">0 Comment</a>
-</p>
-</header>
-  <section class="post-content">
-    <p>Setting up a cloud server using Amazon AWS cloud computing services is very simple and fast, in just a few minutes you can have your Linux or Windows Server up and running. This article covers the main instructions for creating an instance (server) with a Linux Ubuntu 14.10 distribution using the Amazon AWS EC2 (Elastic Cloud Computing) service.</p>
 <h2 id="index">Index</h2>
 <!-- MarkdownTOC autolink=true bracket=round  depth=3 -->
+
 <ul>
   <li><a href="#1.-introduction">1. Introduction</a></li>
   <li><a href="#2.-requirements">2. Requirements</a></li>
@@ -97,7 +23,9 @@
   <li><a href="#7.-connect-to-instance-via-ssh">7. Connect to Instance via SSH</a></li>
   <li><a href="#conclusion">Conclusion</a></li>
 </ul>
+
 <!-- /MarkdownTOC -->
+
 <ol>
   <li>
     <h2 id="introduction">Introduction</h2>
@@ -108,46 +36,62 @@
     <p>To proceed with this article, it is necessary to:</p>
   </li>
 </ol>
+
 <ul>
   <li>Having an <a href="http://aws.amazon.com/pt/free/">Amazon AWS</a> account, I assume you have already created it, and that you are already logged in with your credentials on <a href="https://console.aws.amazon.com/ec2/v2/home">AWS console</a>.</li>
   <li>Understand how to connect to a remote server via SSH.</li>
   <li>Have <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a> installed (Windows users only).</li>
 </ul>
+
 <ol>
   <li>
     <h2 id="select-region">Select region</h2>
     <p>After entering the AWS <a href="https://console.aws.amazon.com/ec2/v2/home">console</a>  is necessary to define a standard region where your data and servers will be stored, Amazon AWS has DataCenter around the world if you want to target services to users nationwide, then choose the region Mumbai.</p>
   </li>
 </ol>
+
 <p>Each region where Amazon has a DataCenter is identified by a unique ID, In Mumbai is <code>ap-south-1</code>, for example. in California it is <code>us-west-1</code>.  Prices also vary from region to region at the moment Mumbai. A Oregon region  <code>us-west-2</code> n the United States has the lowest cost for AWS services, however it is necessary to take into account the latency due to the distance between one region and another.</p>
+
 <p>Well, to select a region where your server and services will be allocated, access the menu in the upper right corner of the console.</p>
+
 <!-- <div class="img-wrap text-center">
 <img src="/images/2014/09/image1.png" alt="" class="img-thumbnail" width="200">
 <span>image 3.1: Select a region</span>
 </div> -->
+
 <p>After selecting a region, click on the <a href="https://console.aws.amazon.com/ec2/v2/home?region=ap-south-1">EC2</a> service.</p>
+
 <ol>
   <li>
     <h2 id="configure-security-group">Configure Security Group</h2>
   </li>
 </ol>
+
 <p>Before creating an instance, it is important to define a  <strong>Security Group</strong> with access permissions according to its objective, in which case a new <strong>Security Group</strong> will be defined to meet the requirements of a web server, therefore it will be necessary to release TCP ports 80 for access via HTTP protocol and 22 to be able to connect to the server remotely via SSH.</p>
+
 <p>In the left side menu of the <a href="https://console.aws.amazon.com/ec2/v2/home?region=ap-south-1">ec2</a> console locate the item <code>NETWORK &amp; SECURITY</code> click on <strong>Security Groups</strong>, then on the <strong>Create Security Group</strong>, button , a dialog window as in <small>image 4.1 </small> should be displayed..</p>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/image2.png" alt="" class="img-thumbnail" width="100%" />
 <span>image 4.1: Configure Security Group</span>
 </div>
+
 <p>In this window, in the <strong>Inbound</strong> tab correctly fill in the most important fields:</p>
+
 <ul>
   <li><strong>Security group name</strong>: Name this Security Group.</li>
   <li><strong>Description</strong> :  Enter a description to identify this Security Group.</li>
 </ul>
+
 <p>Now, add the firewall rules by clicking the <strong>Add Rule</strong>
 button in the column <code>Type</code> select the <strong>TCP</strong> protocol <code>HTTP</code> and then the same process also add the protocol for <code>SSH</code>.</p>
+
 <blockquote>
   <p><strong>IMPORTANT:</strong> As this instance will still go through several configurations and tests to become a publicly accessible webserver, then it is recommended to temporarily release accesses only for your IP, in the <strong>Source</strong> olumn inform your IP address, as you can see in the <em>image 4.1</em>.</p>
 </blockquote>
+
 <p>To finish click <strong>Create</strong>.</p>
+
 <ol>
   <li>
     <h2 id="create-an-ec2-instance">Create an EC2 instance</h2>
@@ -158,201 +102,174 @@ button in the column <code>Type</code> select the <strong>TCP</strong> protocol 
 <img src="/images/aws/image-create-instance.png" alt="" class="img-thumbnail" width="400" />
 <span>imagem 5.1: Create an EC2 Instance</span>
 </div>
+
 <p>A window with seven steps will open until the installation is complete, in step one select an image (AMI) you want to install, you can create an instance using Linux and Windows Server distributions. For this article, a Linux Ubuntu 14.10 distribution will be used and the type of virtualization will be HVM..</p>
+
 <h3 id="step-1-choose-an-amazon-machine-image-ami">Step 1: Choose an Amazon Machine Image (AMI)</h3>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-1.png" alt="" class="img-thumbnail" width="100%" />
 <span>image 5.1: Choose an image (AMI)</span>
 </div>
+
 <p><strong>Important:</strong>  In the new generation of AWS instances, choose the type of virtualization HVM for better performance.</p>
+
 <p>To proceed click  <strong>Next</strong>.</p>
+
 <h3 id="step-2-choose-an-instance-type">Step 2: Choose an Instance Type</h3>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-2.png" alt="" class="img-thumbnail" width="100%" />
 <span>image 5.2: Choose a type of instant</span>
 </div>
+
 <p>In this screen <small>image 5.2</small> echoose the type of hardware for your instance according to your needs. if Free Tier User is eligible you can choose to <code>t2.micro</code>.</p>
+
 <p>Then click <strong>Next</strong>.</p>
+
 <h3 id="step-3-configure-instance-details">Step 3: Configure Instance Details</h3>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-3.png" alt="" class="img-thumbnail" width="100%" />
 <span>image 5.3: Configure Instance Details</span>
 </div>
+
 <p>In this screen  <small>image 5.3</small> just check the option <strong>Enable termination protection</strong> to prevent you from accidentally deleting this instance. Then click <strong>Next</strong>.</p>
+
 <h3 id="step-4-add-storage">Step 4: Add Storage</h3>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-4.png" alt="" class="img-thumbnail" width="100%" />
 <span>image 5.4: Configure Storage Amount</span>
 </div>
+
 <p>In the screen  <small>image 5.4</small> define the amount of storage in the <strong>Size (GiB)</strong> column , for best performance choose the type of storage <code>SSD</code> or <code>Provisioned IOPS (SSD)</code>.</p>
+
 <p>Click  <strong>Next</strong> to continue.</p>
+
 <h3 id="step-5-tag-instance">Step 5: Tag Instance</h3>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-5.png" alt="" class="img-thumbnail" width="100%" />
 <span>image 5.5: Create Instance Tags</span>
 </div>
+
 <p>This screen <small>image 5.5</small> is optional,  if necessary add tags to identify your instance, then click <strong>Next</strong>.</p>
+
 <h3 id="step-6-configure-security-group">Step 6: Configure Security Group</h3>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-6.png" alt="" class="img-thumbnail" width="100%" />
 <span>imagem 5.6: Configure Security Group</span>
 </div>
+
 <p>In this step, <small>image 5.6</small> in the item <strong>Assign a security group</strong> check the option <strong>Select an existing security group</strong> and choose the <strong>Security Group</strong> that you created earlier, to finish click on  <strong>Review and Launch</strong>.</p>
+
 <h3 id="step-7-review-instance-launch">Step 7: Review Instance Launch</h3>
+
 <p>- Review your settings then click <strong>Launch</strong>.<br />
 - AAfter clicking on <strong>Launch</strong> a dialog window will open <small> image 5.7 </small>, so that you have access to your instance via SSH in this window create your key pair or select an existing one.</p>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-7.png" alt="" class="img-thumbnail" width="400" />
 <span>image 5.7: Select Key Pair or create one.</span>
 </div>
+
 <p>If you select the option: <strong>you will have to give a name to this key pair</strong> <small> image 5.7.1 </small> , and then click the <strong>Download Key Pair</strong>, button , save this file on your computer and later change the permissions of that file to only reading.</p>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/step-7.1.png" alt="" class="img-thumbnail" width="400" />
 <span>image 5.7.1: Create Key Pair</span>
 </div>
+
 <p><strong>ATTENTION:</strong> The private key will be used for you to connect to the instance via SSH. Without this key you will not be able to access the instance at all.</p>
+
 <p>Click the  <strong>Launch Instance</strong> button and Done your instance will be created..</p>
+
 <p>After that, go back to the EC2 Instances console and see in the description of this instance all the necessary information you need to connect via SSH, you can use the data from your <strong>Public IP</strong> or <strong>Public DNS</strong>.</p>
+
 <p>So far so good, but the only problem is that when it is created it receives a <strong>Public IP</strong> and a <strong>Public DNS</strong> ex: <strong>ec2-XX-XX-XX-XX.ap-south-1.compute.amazonaws.com</strong> Where X is your <strong>Public IP</strong>, you can use both to connect or access your website, but every time you restart your instance this IP address and DNS change, so to resolve this issue it is important to associate a fixed IP to your instance using <strong>Elastic IP</strong> even because if you want to maintain a webserver you will have to have a fixed IP anyway..</p>
+
 <p>Step 3 ends here, the next step is to create and associate an Elastic IP to that instance.</p>
+
 <ol>
   <li>
     <h2 id="create-elastic-ip-and-associate-it-with-an-instance">Create Elastic IP and associate it with an instance</h2>
   </li>
 </ol>
+
 <p>In the side menu of the EC2 console go to <code>NETWORK &amp; SECURITY</code> and click on <strong>Elastic IP</strong>, then click on  <strong>Allocate New Address</strong>, click on <strong>Yes, Allocate</strong>.</p>
+
 <!-- <div class="img-wrap text-center">
 <img src="/images/2014/09/elastic-ip.png" alt="" class="img-thumbnail" width="250">
 <span>imagem 6.1</span>
 </div> -->
+
 <p>After clicking yes <strong>Yes</strong> one the new <strong>Elastic IP</strong> swill be allocated, now it is necessary to associate this IP to your instance, then on that same screen select the newly allocated IP address and click on <strong>Associate Address</strong>, this will open a new dialog window  <small>image 6.2</small>.</p>
+
 <div class="img-wrap text-center">
 <img src="/images/aws/image-associate-address.png" alt="" class="img-thumbnail" width="100%" />
 <span>image 6.2</span>
 </div>
+
 <p>Just click on the <strong>Instance</strong> field and the console will intelligently display a list of your instances, select the instance on which you want to allocate this <strong>Elastic IP</strong>. To finish click on <strong>Associate</strong>.</p>
+
 <p>Now back to the EC2 Instances console, see in the description of your Linux instance a public fixed IP has been defined. Now you can use this address whenever you connect to your instance.</p>
+
 <ol>
   <li>
     <h2 id="connect-to-instance-via-ssh">Connect to Instance via SSH</h2>
   </li>
 </ol>
+
 <p>Your Linux instance was created, an Elastic IP was associated! It is now possible to connect the instance securely via SSH, using your private key saved when creating the instance.</p>
+
 <p>On Windows you must use the Putty program to access your server via SSH <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">see here how to connect</a>.</p>
+
 <p>On UNIX systems, just open the terminal and first change the permission of your private key:</p>
+
 <pre><code>chmod 400 MyKeyPair.pem
 </code></pre>
+
 <p>Then you can connect the instance using the private key <code>MyKeyPair.pem</code></p>
+
 <p>SSH command to connect the instance remotely</p>
+
 <pre><code>$ ssh -i MyKeyPair.pem ubuntu@XX.XXX.XXX.XX
 </code></pre>
+
 <blockquote>
   <p><strong>Tip:</strong> you can also connect using your <strong>DNS</strong> address ex:</p>
 </blockquote>
+
 <pre><code>$ ssh -i MyKeyPair.pem ubuntu@ec2-XX-XX-XXX-XXX.ap-south-1.compute.amazonaws.com
 </code></pre>
+
 <blockquote>
   <p><strong>Tip:</strong> the default user on Linux Ubuntu is: <code>ubuntu</code> other Linux distributions can be <code>ec2-user</code> or <code>root</code>, but the process for connecting is the same.</p>
 </blockquote>
+
 <p>If everything was done correctly the following Ubuntu welcome screen will be displayed:</p>
+
 <!-- <div class="img-wrap text-center">
 <img src="/images/2014/09/connect-ssh.png" alt="" class="img-thumbnail" width="400">
 <span>imagem 7.1: Conex√£o via SSH</span>
 </div> -->
+
 <p>Now having remote access to the instance it is possible to proceed with the other necessary configurations for a web server, these next steps will be detailed in next upcoming articles:</p>
+
 <ul>
   <li>How to setup linux Ubunut server</li>
   <li>How to configure a Linux Ubuntu Web server with PHP5, Apache and MySQL (LAMP).</li>
   <li>How to configure a Linux Web server with PHP5, Nginx and MySQL.</li>
 </ul>
+
 <p>More tips can be found in this article:</p>
+
 <h2 id="conclusion">Conclusion</h2>
 <p>We saw how to create a server in the AWS cloud, but what we call <code>Instance</code>, in a few clicks we have a web server up and running in one of the largest Cloud Computing companies, this is a simple installation, but there are several services and possibilities, depending on your type of business or project.</p>
-<!-- [Como configurar um servidor Linux Ubuntu]: /blog/linux/configurar-webserver-linux-ubuntu-php-e-apache-nginx.html -->
-<!-- [vhost]: /blog/nginx/setup-server-block-virtual-host-com-nginx.html -->
-  </section><!-- ./post-content -->
-  <hr>
-  <section class="post-related">
-    <h3>Related Posts</h3>
-    <ol class="list-unstyled">
-    </ol>
-  </section><!-- ./post-related -->
-  <hr>
-  <section class="post-navigation">
-    <ul class="pager">
-    </ul>
-  </section><!-- ./post-navigation -->
-  <section class="post-comments">
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        var disqus_shortname = 'shashankssh';
-        var disqus_title = 'Create an instance on Amazon AWS';
-        var disqus_url = 'https://shashank34.github.io/blog/aws/create-instance-aws.html';
-        var disqus_identifier = '';
-        // var disqus_developer = 1; // developer mode is on
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </section>
-<script type="text/javascript">
-  var disqus_shortname = 'shashankssh';
-  (function () {
-  var s = document.createElement('script'); s.async = true;
-  s.type = 'text/javascript';
-  s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
-  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
-</script>
-</article>
-          </div><!-- /.content -->
-<aside class="col-sm-3 col-sm-offset-1 blog-sidebar">
-  <div class="sidebar-module sidebar-module-inset author-brief">
-    <h4><img src="https://en.gravatar.com/userimage/188044257/62967d251689545aa833ffff0af23d57.jpg?size=150" alt="" class="img-circle" width="50" height="50"> About Shashank</h4>
-    <p>
-      Shashank has been a Backend Developer since 2016. Passionate about what he does!
-      Over the years, he has specialized in various web development technologies,
-      today he is considered FullStack Developer.
-    </p>
-    <hr>
-    <ul>
-      <li><a href="https://github.com/shashank34" class="_blank" title="see my profile on Github"><i class="fa fa-github" aria-hidden="true" ></i> <span class="hide-text">GitHub</span></a></li>
-      <li><a href="https://twitter.com/shashankupadh13" class="_blank" title="see my profile on Twitter"><i class="fa fa-twitter" aria-hidden="true" ></i> <span class="hide-text">Twitter</span></a></li>
-      <li><a href="https://www.facebook.com/shashanks835" class="_blank" title="see my profile on Facebook"><i class="fa fa-facebook" aria-hidden="true" ></i> <span class="hide-text">Facebook</span></a></li>
-      <li><a href="https://www.linkedin.com/in/shashank-sharma-ssh" class="_blank" title="see my profile on Linkedin"><i class="fa fa-linkedin"  aria-hidden="true" ></i> <span class="hide-text">Facebook</span></a></li>
-      <li><a href="/feed.xml" class="_blank" title="follow the blog updates"><i class="fa fa-rss"></i> <span class="hide-text">Rss</span></a></li>
-    </ul>
-  </div>
-  <div class="sidebar-module">
-    <h4>Categories</h4>
-    <ol class="list-unstyled">
-      <li class="active"><a href="/blog/category/aws" title="AWS">AWS</a></li>
-      <li><a href="/blog/category/nodejs" title="Nodejs">Nodejs</a></li>
-      <li><a href="/blog/category/python" title="Python">Python</a></li>
-      <li><a href="/blog/category/security" title="Security">Security</a></li>
-      <li><a href="/blog/category/ai" title="AI">AI</a></li>
-      <li><a href="/blog/category/websockets" title="Websockets">Websockets</a></li>
-    </ol>
-  </div>
-</aside><!-- /.blog-sidebar -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-    <footer class="blog-footer">
-      <p>Shashank Sharma - Backend Developer</p>
-      <ol class="list-unstyled">
-        <li><a href="https://github.com/shashank34" class="_blank"><i class="fa fa-github"></i> GitHub</a></li>
-        <li><a href="https://twitter.com/shashankupadh13" class="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
-        <li><a href="https://www.facebook.com/shashanks835" class="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
-        <li><a href="https://www.linkedin.com/in/shashank-sharma-ssh" class="_blank"><i class="fa fa-linkedin"></i> Linkedin</a></li>
-      </ol>
-      <p><small>This blog is proudly built with <a href="https://jekyllrb.com/" class="_blank">Jekyll</a> | &copy; 2020 &mdash; 2020</small></p>
-    </footer>
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/main.js"></script>
-<a href="#top" class="btn to_top" title="scroll the page"><i class="ico ico-arrow-up"></i></a>
 
-  </body>
-</html>
+<!-- [Como configurar um servidor Linux Ubuntu]: /blog/linux/configurar-webserver-linux-ubuntu-php-e-apache-nginx.html -->
+
+<!-- [vhost]: /blog/nginx/setup-server-block-virtual-host-com-nginx.html -->
+:ET

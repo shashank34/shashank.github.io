@@ -5,8 +5,8 @@
     <description>Shashank Sharma Backend - Web Developer Nodejs,Python</description>
     <link>https://shashank34.github.io/</link>
     <atom:link href="https://shashank34.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Jun 2020 11:53:13 +0530</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2020 11:53:13 +0530</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2020 12:04:41 +0530</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2020 12:04:41 +0530</lastBuildDate>
     <generator>Jekyll v4.1.0</generator>
     
       <item>
@@ -35,9 +35,11 @@
   &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
-&lt;h2 id=&quot;1-introduction&quot;&gt;&amp;lt;1. Introduction&lt;/h2&gt;
-&lt;p&gt;In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses &lt;a href=&quot;http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#E&quot;&gt;different nomenclatures&lt;/a&gt; for its services, therefore, terms such as, &lt;strong&gt;&lt;em&gt;Instance&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Server&lt;/strong&gt; , &lt;strong&gt;&lt;em&gt;Elastic IP&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Fixed IP&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Security Group&lt;/em&gt;&lt;/strong&gt; means  &lt;strong&gt;Firewall&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Console&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Panel&lt;/strong&gt;.&lt;/p&gt;
 &lt;ol&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+    &lt;p&gt;In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses &lt;a href=&quot;http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#E&quot;&gt;different nomenclatures&lt;/a&gt; for its services, therefore, terms such as, &lt;strong&gt;&lt;em&gt;Instance&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Server&lt;/strong&gt; , &lt;strong&gt;&lt;em&gt;Elastic IP&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Fixed IP&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Security Group&lt;/em&gt;&lt;/strong&gt; means  &lt;strong&gt;Firewall&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Console&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Panel&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;
     &lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
     &lt;p&gt;To proceed with this article, it is necessary to:&lt;/p&gt;
