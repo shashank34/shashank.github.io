@@ -5,8 +5,8 @@
     <description>Shashank Sharma Backend - Web Developer Nodejs,Python</description>
     <link>https://shashank34.github.io/</link>
     <atom:link href="https://shashank34.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Jun 2020 11:22:27 +0530</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2020 11:22:27 +0530</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2020 11:29:21 +0530</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2020 11:29:21 +0530</lastBuildDate>
     <generator>Jekyll v4.1.0</generator>
     
       <item>
@@ -18,10 +18,10 @@
   &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;1. Introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;2. Requirements&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#select-region&quot;&gt;3. Select region&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#4.-configure-security-group&quot;&gt;4. Configure security group&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#5.-create-an-ec2-instance&quot;&gt;5. Create an EC2 Instance&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#configure-security-group&quot;&gt;4. Configure security group&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-an-ec2-instance&quot;&gt;5. Create an EC2 Instance&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#step-1:-choose-an-amazon-machine-image-(ami)&quot;&gt;Step 1: Choose an Amazon Machine Image (AMI)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#choose-an-amazon-machine-image-(ami)&quot;&gt;Step 1: Choose an Amazon Machine Image (AMI)&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#step-2:-choose-an-instance-type&quot;&gt;Step 2: Choose an Instance Type&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#step-3:-configure-instance-details&quot;&gt;Step 3: Configure Instance Details&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#step-4:-add-storage&quot;&gt;Step 4: Add Storage&lt;/a&gt;&lt;/li&gt;
@@ -30,8 +30,8 @@
       &lt;li&gt;&lt;a href=&quot;#step-7:-review-instance-launch&quot;&gt;Step 7: Review Instance Launch&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#6.-create-elastic-ip-and-associate-it-with-an-instance&quot;&gt;6. Create Elastic IP and associate it with an instance&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#7.-connect-to-instance-via-ssh&quot;&gt;7.Connect to Instance via SSH&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#create-elastic-ip-and-associate-it-with-an-instance&quot;&gt;6. Create Elastic IP and associate it with an instance&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#connect-to-instance-via-ssh&quot;&gt;7. Connect to Instance via SSH&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
@@ -52,7 +52,7 @@
 &lt;/ul&gt;
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;h2 id=&quot;select-a-region&quot;&gt;Select a region&lt;/h2&gt;
+    &lt;h2 id=&quot;select-region&quot;&gt;Select region&lt;/h2&gt;
     &lt;p&gt;After entering the AWS &lt;a href=&quot;https://console.aws.amazon.com/ec2/v2/home&quot;&gt;console&lt;/a&gt;  is necessary to define a standard region where your data and servers will be stored, Amazon AWS has DataCenter around the world if you want to target services to users nationwide, then choose the region Mumbai.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -171,7 +171,7 @@ button in the column &lt;code&gt;Type&lt;/code&gt; select the &lt;strong&gt;TCP&
 &lt;p&gt;Now back to the EC2 Instances console, see in the description of your Linux instance a public fixed IP has been defined. Now you can use this address whenever you connect to your instance.&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;h2 id=&quot;connect-the-instance-via-ssh&quot;&gt;Connect the Instance via SSH&lt;/h2&gt;
+    &lt;h2 id=&quot;connect-to-instance-via-ssh&quot;&gt;Connect to Instance via SSH&lt;/h2&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Your Linux instance was created, an Elastic IP was associated! It is now possible to connect the instance securely via SSH, using your private key saved when creating the instance.&lt;/p&gt;
