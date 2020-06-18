@@ -2,61 +2,61 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shashank34.github.io/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/aws/create-instance-aws.html</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/about/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/category/ai/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/category/aws/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/category/nodejs/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/category/python/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/category/security/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://shashank34.github.io/blog/category/websockets/</loc>
-    <lastmod>2020-06-18T11:17:26+05:30</lastmod>
+    <lastmod>2020-06-18T11:19:32+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
