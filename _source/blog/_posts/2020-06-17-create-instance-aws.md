@@ -29,13 +29,12 @@ Index
 - [7. Connect to Instance via SSH](#7.-connect-to-instance-via-ssh)
 - [Conclusion](#conclusion)
 
-----------------
 <!-- /MarkdownTOC -->
 
-1. Introduction
+<1. Introduction
 -----------------
 In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses [different nomenclatures][glossary] for its services, therefore, terms such as, ***Instance*** means **Server** , ***Elastic IP*** means **Fixed IP**, ***Security Group*** means  **Firewall** and ***Console*** means **Panel**.
-----------------
+
 
 2. Requirements
 -----------------
@@ -44,7 +43,7 @@ To proceed with this article, it is necessary to:
 - Having an [Amazon AWS][signup] account, I assume you have already created it, and that you are already logged in with your credentials on [AWS console][console].
 - Understand how to connect to a remote server via SSH.
 - Have [Putty][putty] installed (Windows users only).
------------------
+
 
 3. Select region
 -------------------------
