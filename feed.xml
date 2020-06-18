@@ -5,8 +5,8 @@
     <description>Shashank Sharma Backend - Web Developer Nodejs,Python</description>
     <link>https://shashank34.github.io/</link>
     <atom:link href="https://shashank34.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 18 Jun 2020 11:38:58 +0530</pubDate>
-    <lastBuildDate>Thu, 18 Jun 2020 11:38:58 +0530</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2020 11:50:56 +0530</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2020 11:50:56 +0530</lastBuildDate>
     <generator>Jekyll v4.1.0</generator>
     
       <item>
@@ -18,10 +18,10 @@
   &lt;li&gt;&lt;a href=&quot;#1.-introduction&quot;&gt;1. Introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2.-requirements&quot;&gt;2. Requirements&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3.-select-region&quot;&gt;3. Select region&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#configure-security-group&quot;&gt;4. Configure security group&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#create-an-ec2-instance&quot;&gt;5. Create an EC2 Instance&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-configure-security-group&quot;&gt;4. Configure security group&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-create-an-ec2-instance&quot;&gt;5. Create an EC2 Instance&lt;/a&gt;
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#choose-an-amazon-machine-image-(ami)&quot;&gt;Step 1: Choose an Amazon Machine Image (AMI)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-1:-choose-an-amazon-machine-image-(ami)&quot;&gt;Step 1: Choose an Amazon Machine Image (AMI)&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#step-2:-choose-an-instance-type&quot;&gt;Step 2: Choose an Instance Type&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#step-3:-configure-instance-details&quot;&gt;Step 3: Configure Instance Details&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#step-4:-add-storage&quot;&gt;Step 4: Add Storage&lt;/a&gt;&lt;/li&gt;
@@ -30,15 +30,17 @@
       &lt;li&gt;&lt;a href=&quot;#step-7:-review-instance-launch&quot;&gt;Step 7: Review Instance Launch&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#create-elastic-ip-and-associate-it-with-an-instance&quot;&gt;6. Create Elastic IP and associate it with an instance&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#connect-to-instance-via-ssh&quot;&gt;7. Connect to Instance via SSH&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6.-create-elastic-ip-and-associate-it-with-an-instance&quot;&gt;6. Create Elastic IP and associate it with an instance&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7.-connect-to-instance-via-ssh&quot;&gt;7. Connect to Instance via SSH&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr /&gt;
 &lt;!-- /MarkdownTOC --&gt;
 &lt;ol&gt;
   &lt;li&gt;
     &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-    &lt;p&gt;In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses &lt;a href=&quot;http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#E&quot;&gt;different nomenclatures&lt;/a&gt; for its services, therefore, terms such as, &lt;strong&gt;&lt;em&gt;Instance&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Server&lt;/strong&gt; , &lt;strong&gt;&lt;em&gt;Elastic IP&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Fixed IP&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Security Group&lt;/em&gt;&lt;/strong&gt; means  &lt;strong&gt;Firewall&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Console&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Panel&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;In the approach of this article it is very important to understand some basic terms that will be used during each step, because Amazon AWS uses &lt;a href=&quot;http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#E&quot;&gt;different nomenclatures&lt;/a&gt; for its services, therefore, terms such as, &lt;strong&gt;&lt;em&gt;Instance&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Server&lt;/strong&gt; , &lt;strong&gt;&lt;em&gt;Elastic IP&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Fixed IP&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;Security Group&lt;/em&gt;&lt;/strong&gt; means  &lt;strong&gt;Firewall&lt;/strong&gt; and &lt;strong&gt;&lt;em&gt;Console&lt;/em&gt;&lt;/strong&gt; means &lt;strong&gt;Panel&lt;/strong&gt;.
+—————-&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
@@ -48,7 +50,9 @@
 &lt;ul&gt;
   &lt;li&gt;Having an &lt;a href=&quot;http://aws.amazon.com/pt/free/&quot;&gt;Amazon AWS&lt;/a&gt; account, I assume you have already created it, and that you are already logged in with your credentials on &lt;a href=&quot;https://console.aws.amazon.com/ec2/v2/home&quot;&gt;AWS console&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Understand how to connect to a remote server via SSH.&lt;/li&gt;
-  &lt;li&gt;Have &lt;a href=&quot;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&quot;&gt;Putty&lt;/a&gt; installed (Windows users only).&lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;have-putty-installed-windows-users-only&quot;&gt;Have &lt;a href=&quot;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&quot;&gt;Putty&lt;/a&gt; installed (Windows users only).&lt;/h2&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
   &lt;li&gt;
